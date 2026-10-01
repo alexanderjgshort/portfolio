@@ -39,16 +39,18 @@
           alt="AM6231 embedded Linux PCB"
         >
         
+        <h4>What it does</h4>
+        
+        <p>Leonhart is a custom embedded Linux board capable of hosting local Zigbee and Thread networks, and interacting with smart devices on those networks through Matter commands. This allows for local control of devices, no proprietary walls, and legacy Zigbee devices to remain useful</p>
+        
         <h4>What I did</h4>
 
         <p>
-          Leonhart is a custom embedded Linux gateway built around Texas Instruments' AM6231 SoC, integrating DDR4, eMMC, Gigabit Ethernet, USB, power management, and multiprotocol wireless connectivity.
+          Designed the schematic and PCB from scratch, including DDR4, RGMII Ethernet, power sequencing, eMMC, USB, and radio interfaces.
         </p>
 
         <p>
-          I designed the schematic and PCB, completed board bring-up,
-          debugged the first revision, and brought the second revision
-          through U-Boot into Linux with working Gigabit Ethernet.
+          Rev A successfully booted Linux but exposed power, Ethernet, and radio pinout issues. I debugged those failures and designed Rev B, which boots Linux directly from eMMC with working Gigabit Ethernet, SSH, and MGM240P communication.
         </p>
       </article>
 
