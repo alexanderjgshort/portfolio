@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  background: #0f1115;
-  color: #e8e8e8;
+  background: #000;
+  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
@@ -54,6 +54,10 @@ h3 {
   font-size: 1.6rem;
 }
 
+h4 {
+  margin-bottom: 8px;
+}
+
 article {
   margin: 70px 0;
 }
@@ -68,4 +72,43 @@ img {
 
 p {
   max-width: 800px;
+}
+
+details {
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+summary {
+  color: #9ecbff;
+  cursor: pointer;
+  font-weight: bold;
+  width: fit-content;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+.project-details {
+  margin-top: 20px;
+  margin-left: 12px;
+  padding-left: 24px;
+
+  border-left: 2px solid #343b47;
+}
+
+.project-details h4 {
+  font-size: 1.2rem;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.project-details a {
+  color: #9ecbff;
+  text-decoration: none;
+}
+
+.project-details a:hover {
+  text-decoration: underline;
 }
