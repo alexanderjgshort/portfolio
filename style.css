@@ -127,4 +127,26 @@ img {
   border-radius: 12px;
 }
 
+.image-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.image-row img {
+  width: calc(50% - 8px);
+  max-width: none;
+  margin: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 800px) {
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row img {
+    width: 100%;
+  }
+}
 
