@@ -168,12 +168,58 @@
           src="images/drone3d.png"
           alt="Custom FPV drone flight computer PCB"
         >
-
         <p>
-          Six-layer mixed-signal and RF flight computer integrating
-          an STM32N6 MCU, 5 GHz video hardware, 915 MHz control radio,
-          sensors, high-speed flash, USB-C, and 6S power conversion.
+          A custom six-layer flight computer designed around the STM32N657, integrating high-speed camera interfaces, 5 GHz video hardware, a 915 MHz control radio, inertial and environmental sensors, external flash, audio, USB-C, and power conversion from a 6S battery.
         </p>
+        
+        
+        <details>
+	  <summary>Read more</summary>
+	  
+	  <div class ="project-details">
+	  
+	    <h4>System Architecture</h4>
+	    
+	    <p>
+              The board is designed as a compact mixed-signal platform combining flight-control, video, radio, sensing, and power-management functionality on a single PCB. The STM32N657 acts as the central processor, with external OSPI flash, an IMU, barometer, magnetometer, camera interface, and dedicated radio subsystems.
+            </p>
+            
+            <h4>RF Design</h4>
+            <p>  
+              The board contains two independent RF systems: a 5 GHz path for video, utilizing TI's CC3350, and a 915 MHz link for control, utilizing Semtech's SX1262. The 5 GHz path includes a diplexer, allowing the same RF chain to support a 2.4 GHz link as well. To accommodate both bands, a dual-band chip antenna was used. Both RF paths include dedicated impedance-matching networks to allow tuning after fabrication. Consideration for the carbon fibre drone chassis was also considered when designing the RF sections, making sure there was no carbon fibre beneath the antennas.
+	    </p>
+	    <p>
+	      RF test access was included through a coaxial test switch so the antenna path can be measured with a VNA during bring-up and tuning.
+	    </p>
+	    
+	    <h4>Power Architecture</h4>
+	    <p>
+	      The board accepts power from a 6S battery through an ESC connector, and generates the lower voltage rails required by the MCU, radios, sensors and peripherals. The input includes reverse-polarity and transient protection, while a power mux allows the system to operate from either the battery or USB-C during development.
+	    </p>
+	    <p>
+	      I created a worst-case power budget for each subsystem to estimate maximum current draw and verify that the regulators, power mux, and protection components had sufficient headroom. This also helped confirm the expected load on each voltage rail before fabrication.
+	    </p>
+	    
+	    <img
+	      src="images/dronepowerbudget.png"
+	      alt="Drone flight controller power budget table"
+	      class="power-table"
+	    >
+	    <p class="image-caption">
+  	      Worst-case power budget used to size the power architecture and verify regulator and rail current margins.
+            </p>
+            
+            <h4>Current Status</h4>
+            
+            <p>
+              The schematic is complete and the PCB layout is nearing completion. The remaining work consists primarily of final routing, verification, and design-rule checks before fabrication and assembly.
+            </p>
+            
+            <a href="https://github.com/alexanderjgshort/SoftDrone">
+		View project on GitHub →
+	    </a>
+          </div>
+        </details>
       </article>
 
     </section>
